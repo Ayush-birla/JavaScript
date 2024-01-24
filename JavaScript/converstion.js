@@ -24,3 +24,16 @@ console.log(bIsLog);
     null->false
     undefined->false
  */
+const id=Symbol("123")
+console.log(id);
+
+const hero=["rajesh","Rohit","ramu"]
+console.log(hero);
+
+const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+console.log(person.age);
+
+hero.forEach(element => {
+   console.log(element); 
+});
