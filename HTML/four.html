@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code of DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addElement(lang){
+    const li=document.createElement('li')
+    li.innerHTML=lang
+    document.querySelector('.language').appendChild(li);
+    }
+    addElement("html")
+    addElement("Swing")
+
+    function optiAddElement(lang)
+    {
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(`${lang}`))
+        document.querySelector('.language').appendChild(li)
+    }
+    optiAddElement("JAva")
+
+    // Edit
+    const secondEle=document.querySelector('li:nth-child(3)')
+    console.log(secondEle);
+
+    const repEle=document.createElement('li')
+    repEle.textContent="Golang"
+
+    secondEle.replaceWith(repEle)
+
+    // edit first element
+    const firstEle=document.querySelector('li:first-child')
+    firstEle.outerHTML='<li>CPP</li>'
+    
+    // revomve element
+    const lastEle=document.querySelector('li:nth-child(2)')
+    lastEle.remove()
+    
+    
+
+
+</script>
+</html>
