@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <!-- Lorem ipsum dolor sit amet. -->
+    <div>
+    <img></img><br>
+    <span></span>
+    <h1></h1>
+   </div>
+ </body>
+ <script>
+    const xml=new XMLHttpRequest()
+    console.log("hi");
+    xml.open('GET',"https://randomuser.me/api")
+    xml.onreadystatechange=function(){
+        console.log(xml.readyState);
+        if(xml.readyState===4)
+        {
+            const data=JSON.parse(this.responseText)
+            console.log( data.results[0].picture.large);
+            document.querySelector('img').setAttribute('src',data.results[0].picture.large)
+            // document.querySelector('img').setAttribute('radius','50%')
+
+            // document.querySelector('img').style.float='right'
+            document.querySelector('div').style.textAlign='center'
+            document.querySelector('img').style.border='50%'
+
+            document.querySelector('h1').innerHTML=`Email : ${ (data.results[0].email)}`
+            
+            document.querySelector('span').innerHTML=`Name : ${data.results[0].name.first}`
+            
+        }
+    }
+    xml.send()
+ </script>
+ </html> 
